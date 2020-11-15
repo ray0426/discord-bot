@@ -1,0 +1,7 @@
+# file name .gitignore
+
+# token of discord bot
+token.json
+
+# ignore node_modules
+node_modules/
