@@ -7,6 +7,10 @@ const client = new Discord.Client();
 
 const queue = new Map();
 
+const img_data = require("./data.json");
+const url_list = img_data.map(e => e.img_ID);
+const url_amount = url_list.length;
+
 // message when connect, disconnect
 client.once("ready", () => {
 	console.log("Ready!");
@@ -39,7 +43,7 @@ client.on("message", async message => {
 	} else if (message.content.startsWith(`${prefix}random`)) {
 		message.channel.send("Random number: " + Math.random().toString());
 	} else if (message.content.startsWith(`${prefix}抽`)) {
-		message.channel.send("https://www.pixiv.net/artworks/" + parseInt(Math.random()*80000000 + 10000000).toString());
+		message.channel.send("https://www.pixiv.net/artworks/" + url_list[parseInt(Math.random()*url_amount)].toString());
 	}else {
 		message.channel.send("You need to enter a valid command!");
 	}

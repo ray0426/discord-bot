@@ -3,5 +3,8 @@
 # token of discord bot
 token.json
 
-# ignore node_modules
+# node_modules
 node_modules/
+
+# image data
+data.json
