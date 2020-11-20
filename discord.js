@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const { prefix } = require("./config.json");
 const { token } = require("./token.json");
 const ytdl = require("ytdl-core-discord");
+const addon = require('bindings')('addon');
 
 const client = new Discord.Client();
 
@@ -14,6 +15,9 @@ const url_amount = url_list.length;
 // message when connect, disconnect
 client.once("ready", () => {
 	console.log("Ready!");
+	addon(function(msg) {
+		console.log(msg);
+	});
 });
 
 client.once("reconnecting", () => {
