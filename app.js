@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const { prefix } = require("./config.json");
-const { token } = require("./token.json");
+const { prefix } = require("./configs/config.json");
+const { token } = require("./configs/token.json");
 const ytdl = require("ytdl-core-discord");
 const addon = require('bindings')('addon');
 
@@ -8,7 +8,7 @@ const client = new Discord.Client();
 
 const queue = new Map();
 
-const img_data = require("./data.json");
+const img_data = require("./data/data.json");
 const url_list = img_data.map(e => e.img_ID);
 const url_amount = url_list.length;
 

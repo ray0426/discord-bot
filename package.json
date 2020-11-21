@@ -1,4 +1,9 @@
 {
+  "name": "dc-bot",
+  "version": "0.0.1",
+  "description": "bot for discord",
+  "main": "app.js",
+  "private": true,
   "gypfile": true,
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
@@ -11,5 +16,8 @@
     "node-addon-api": "^3.0.2",
     "node-gyp": "^7.1.2",
     "ytdl-core-discord": "^1.2.4"
+  },
+  "scripts": {
+    "run": "node app.js"
   }
 }

@@ -1,13 +1,13 @@
 # file name .gitignore
 
 # token of discord bot
-token.json
+configs/token.json
 
 # node_modules
 node_modules/
 
 # image data
-data.json
+data/data.json
 
 # build
 build/
