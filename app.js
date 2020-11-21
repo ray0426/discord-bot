@@ -15,9 +15,15 @@ const url_amount = url_list.length;
 // message when connect, disconnect
 client.once("ready", () => {
 	console.log("Ready!");
-	addon(function(msg) {
+	addon.msg(function(msg) {
 		console.log(msg);
 	});
+	console.log("hi1");
+	addon.calc("5+3");
+	console.log("hi1-1");
+	console.log(typeof addon.calc("1+2*3"));
+	console.log("hi2");
+	console.log(addon.calc("4*6"));
 });
 
 client.once("reconnecting", () => {
@@ -48,6 +54,8 @@ client.on("message", async message => {
 		message.channel.send("Random number: " + Math.random().toString());
 	} else if (message.content.startsWith(`${prefix}抽`)) {
 		message.channel.send("https://www.pixiv.net/artworks/" + url_list[parseInt(Math.random()*url_amount)].toString());
+	} else if (message.content.startsWith(`${prefix}calc`)) {
+		message.channel.send("答案：" + addon.calc(message.content.replace(`${prefix}calc `, "")));
 	}else {
 		message.channel.send("You need to enter a valid command!");
 	}
